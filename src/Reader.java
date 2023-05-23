@@ -1,18 +1,28 @@
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Reader {
-    public static void Leer(){
+    public static ArrayList Leer(){
+        ArrayList<String> lineas = new ArrayList<>();
         try {
             File archivo = new File("logistica.txt");
-            FileReader lector = new FileReader(archivo);
-            BufferedReader buffer = new BufferedReader(lector);
-            String linea;
-            while ((linea = buffer.readLine()) != null) {
+            Scanner scanner = new Scanner(archivo);
+
+            while (scanner.hasNextLine()) {
+                String linea = scanner.nextLine();
+                lineas.add(linea);
+            }
+
+            scanner.close();
+
+            // hacer algo con las líneas guardadas en el ArrayList
+            for (String linea : lineas) {
                 System.out.println(linea);
             }
-            buffer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        } catch (Exception e) {
+            System.out.println("Ocurrió un error: " + e.getMessage());
+        } return lineas;
     }
 }
