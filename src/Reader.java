@@ -1,28 +1,33 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 public class Reader {
-    public static ArrayList Leer(){
-        ArrayList<String> lineas = new ArrayList<>();
+    public static ArrayList<String> Leer(String fileName) {
+        ArrayList<String> fileLines = new ArrayList<String>();
+        BufferedReader reader = null;
         try {
-            File archivo = new File("logistica.txt");
-            Scanner scanner = new Scanner(archivo);
-
-            while (scanner.hasNextLine()) {
-                String linea = scanner.nextLine();
-                lineas.add(linea);
+            reader = new BufferedReader(new FileReader(fileName));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+                fileLines.add(line);
             }
-
-            scanner.close();
-
-            // hacer algo con las líneas guardadas en el ArrayList
-            for (String linea : lineas) {
-                System.out.println(linea);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (Exception e) {
-            System.out.println("Ocurrió un error: " + e.getMessage());
-        } return lineas;
+        }
+        return fileLines;
     }
 }
