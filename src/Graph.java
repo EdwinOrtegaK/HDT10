@@ -97,7 +97,7 @@ public class Graph {
 
     }
 
-    private int getNodeIndex(String nodeName){
+    public int getNodeIndex(String nodeName){
 
         System.out.println("LOOKING FOR "+nodeName+" Index");
 
