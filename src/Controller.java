@@ -8,7 +8,7 @@ public class Controller {
      * @return
      */
     public static ArrayList<String> getData() {
-        ArrayList<String> lineasTxt = Reader.Leer("HDT10/logistica.txt");
+        ArrayList<String> lineasTxt = Reader.Leer("logistica.txt");
         lineasTxt.remove(0);
         return lineasTxt;
     }
@@ -86,7 +86,4 @@ public class Controller {
             System.out.println((c+1)+") "+citiesNodes.get(c).getNodeName());
         }
     }
-
-
-
 }
