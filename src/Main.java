@@ -10,17 +10,25 @@ public class Main {
 
         Graph myGraph = new Graph();
         myGraph.setNodes(Controller.getData());
-        Controller.showGraph(myGraph);
 
         int[][] matrix = Matrix.adjacencyGenerator(myGraph);
         System.out.println("MATRIZ DE ADYANCENCIA");
         Controller.matrixIteration(matrix);
-        System.out.println("MATRIX CON WARSHALL");
-        int[][] ordenado = FloydWarshall.floydWarshall(matrix);
-        Controller.matrixIteration(ordenado);
+        System.out.println("\nMATRIX CON WARSHALL");
+        int[][] rutasCortas = FloydWarshall.floydWarshall(matrix);
+        Controller.matrixIteration(rutasCortas);
 
-
-
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("Ingrese una ciudad: ");
+            ciu1 = sc.nextLine();
+            System.out.println("Ingrese otra ciudad: ");
+            ciu2 = sc.nextLine();
+            System.out.println("Ingrese una tiempo: ");
+            tt = sc.nextInt();
+            FloydWarshall.rutaMasCorta(ciu1, ciu2);
+            bandera = true;
+        }
     }
 }
 
