@@ -23,7 +23,23 @@ public class FloydWarshall {
         }
         return dist;
     }
-    public static void rutaMasCorta(String ciu1, String ciu2){
-        System.out.println("JOU-E ESTA BIEN BUENEEEEEEEE");
+    public static void rutaMasCorta(String ciu1, String ciu2,Graph graph,int[][] rutasCortas){
+
+        try{
+            int indx1 = graph.getNodeIndex(ciu1);
+            int indx2 = graph.getNodeIndex(ciu2);
+
+            try{
+                System.out.println("Buscando la rutas mas corta de "+ciu1+" a "+ciu2);
+                System.out.println("La ruta mas corta es de: "+rutasCortas[indx1][indx2]);
+            }catch (Exception e){
+                System.out.println("Parece que no hay rutas entre estas ciudadades :(");
+                System.out.println(e.getMessage());
+            }
+
+        }catch (Exception e){
+            System.out.println("La ciudad que ingreso no existe :(");
+        }
+
     }
 }

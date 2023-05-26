@@ -3,6 +3,11 @@ import java.util.ArrayList;
 public class Matrix {
     private static final int INF = 999999; // Valor infinito para representar ausencia de conexión
 
+    /**
+     * Method generates the adjacency matrix given a graph
+     * @param graph
+     * @return
+     */
     public static int[][] adjacencyGenerator(Graph graph){
         
         //Setting vertices
@@ -33,8 +38,7 @@ public class Matrix {
                 if(rowName!=columnName && element==0){
                     matrix[graph.getNodeIndex(rowName)][graph.getNodeIndex(columnName)] = INF;
                 }
-                System.out.println("ROW:"+i+" COLUMN:"+j);
-                System.out.print(element + " ");
+
             }
             System.out.println(); // Move to the next line after each row
         }

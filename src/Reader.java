@@ -7,6 +7,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 public class Reader {
+
+    /**
+     * Method reads a file
+     * @param fileName
+     * @return
+     */
     public static ArrayList<String> Leer(String fileName) {
         ArrayList<String> fileLines = new ArrayList<String>();
         BufferedReader reader = null;

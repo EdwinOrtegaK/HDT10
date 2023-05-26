@@ -3,9 +3,12 @@ import java.util.ArrayList;
 
 public class Controller {
 
+    /**
+     * Gets the data from the txt
+     * @return
+     */
     public static ArrayList<String> getData() {
-
-        ArrayList<String> lineasTxt = Reader.Leer("logistica.txt");
+        ArrayList<String> lineasTxt = Reader.Leer("HDT10/logistica.txt");
         lineasTxt.remove(0);
         return lineasTxt;
     }
@@ -20,6 +23,11 @@ public class Controller {
         return false;
     }
 
+
+    /**
+     * Method shows up the graph
+     * @param graph
+     */
     public static void showGraph(Graph graph){
         System.out.println("=======================\nSHOWING GRAPH INFORMATION");
         for (int s = 0; s < graph.getNodes().size(); s++) {
@@ -55,6 +63,10 @@ public class Controller {
 
     }
 
+    /**
+     * Method shows a matrix
+     * @param matrix
+     */
     public static void matrixIteration(int[][] matrix){
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -62,6 +74,16 @@ public class Controller {
                 System.out.print(element + " ");
             }
             System.out.println(); // Move to the next line after each row
+        }
+    }
+
+    /**
+     * Method shows the nodes from the graph
+     * @param citiesNodes
+     */
+    public static void showCities(ArrayList<Node> citiesNodes){
+        for (int c = 0; c < citiesNodes.size(); c++) {
+            System.out.println((c+1)+") "+citiesNodes.get(c).getNodeName());
         }
     }
 
