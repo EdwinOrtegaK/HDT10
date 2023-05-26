@@ -2,3 +2,4 @@ Ciudad1 Ciudad2 tiempoNormal
 BuenosAires SaoPaulo 10
 BuenosAires Lima 34
 Lima Quito 10
+BuenosAires Guatemala 4

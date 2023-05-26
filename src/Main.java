@@ -13,17 +13,14 @@ public class Main {
         Controller.showGraph(myGraph);
 
         int[][] matrix = Matrix.adjacencyGenerator(myGraph);
+        System.out.println("MATRIZ DE ADYANCENCIA");
         Controller.matrixIteration(matrix);
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            System.out.println("Ingrese una ciudad: ");
-            ciu1 = sc.nextLine();
-            System.out.println("Ingrese otra ciudad: ");
-            ciu2 = sc.nextLine();
-            System.out.println("Ingrese una tiempo: ");
-            tt = sc.nextInt();
-            bandera = true;
-        }
+        System.out.println("MATRIX CON WARSHALL");
+        int[][] ordenado = FloydWarshall.floydWarshall(matrix);
+        Controller.matrixIteration(ordenado);
+
+
+
     }
 }
 

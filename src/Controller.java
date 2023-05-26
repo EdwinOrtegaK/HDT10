@@ -5,7 +5,7 @@ public class Controller {
 
     public static ArrayList<String> getData() {
 
-        ArrayList<String> lineasTxt = Reader.Leer("logistica.txt");
+        ArrayList<String> lineasTxt = Reader.Leer("HDT10/logistica.txt");
         lineasTxt.remove(0);
         return lineasTxt;
     }
